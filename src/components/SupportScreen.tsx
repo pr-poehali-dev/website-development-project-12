@@ -11,7 +11,7 @@ interface SupportScreenProps {
 
 export default function SupportScreen({ onNavigate }: SupportScreenProps) {
   return (
-    <div className="min-h-screen bg-white p-6">
+    <div className="min-h-screen bg-white p-4 md:p-6 pb-20 md:pb-24">
       <div className="flex items-center justify-between mb-6">
         <Button 
           variant="ghost" 
@@ -20,12 +20,12 @@ export default function SupportScreen({ onNavigate }: SupportScreenProps) {
         >
           <Icon name="ArrowLeft" size={24} />
         </Button>
-        <h2 className="text-lg font-semibold">Поддержка</h2>
+        <h2 className="text-base md:text-lg font-semibold">Поддержка</h2>
         <div className="w-10"></div>
       </div>
 
       <Tabs defaultValue="faq" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 mb-6">
+        <TabsList className="grid w-full grid-cols-2 mb-4 md:mb-6">
           <TabsTrigger value="faq">FAQ</TabsTrigger>
           <TabsTrigger value="chat">Чат</TabsTrigger>
         </TabsList>

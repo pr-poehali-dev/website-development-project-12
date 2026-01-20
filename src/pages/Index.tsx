@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      <div className="max-w-md mx-auto bg-white min-h-screen shadow-2xl relative">
+      <div className="w-full md:max-w-md mx-auto bg-white min-h-screen md:shadow-2xl relative">
         {selectedScreen === 'home' && (
           <HomeScreen onNavigate={setSelectedScreen} />
         )}
