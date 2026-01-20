@@ -24,7 +24,7 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
 
       <div className="flex-1 relative overflow-hidden">
         <img 
-          src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/files/2bdba5df-bbb3-4a1c-9e92-f701a4c185be.jpg" 
+          src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/files/9c5c4ae3-367c-4b89-9339-82ef82193492.jpg" 
           alt="Happy travelers" 
           className="w-full h-full object-cover"
         />
