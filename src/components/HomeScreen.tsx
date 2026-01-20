@@ -8,15 +8,15 @@ interface HomeScreenProps {
 export default function HomeScreen({ onNavigate }: HomeScreenProps) {
   return (
     <div className="relative h-screen flex flex-col">
-      <div className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between z-10">
+      <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 flex items-center justify-between z-10">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <div className="w-8 h-8 bg-secondary rounded-lg relative overflow-hidden">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl flex items-center justify-center">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary rounded-lg relative overflow-hidden">
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-sm"></div>
             </div>
           </div>
           <div>
-            <h1 className="text-xl font-bold text-secondary">всегда на связи</h1>
+            <h1 className="text-base sm:text-xl font-bold text-secondary">всегда на связи</h1>
             <p className="text-xs text-slate-600">от посадки до вылета</p>
           </div>
         </div>
@@ -28,22 +28,22 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
           alt="Happy travelers" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 pb-8">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 sm:p-6 pb-6 sm:pb-8">
           <Badge className="bg-primary text-secondary mb-4 text-sm px-3 py-1">
             дешевле роуминга на 50%
           </Badge>
-          <h2 className="text-white text-3xl font-bold mb-2">1100 ₽ за 5 гб и 30 минут</h2>
+          <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2">1100 ₽ за 5 гб и 30 минут</h2>
         </div>
       </div>
 
-      <div className="p-6 space-y-4">
-        <h3 className="text-lg font-semibold text-secondary">
+      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+        <h3 className="text-base sm:text-lg font-semibold text-secondary">
           eSIM Travel от билайн — один номер для всех путешествий
         </h3>
         <p className="text-sm text-slate-600">
           без визитов в салон и сюрпризов в счёте
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <Button 
             className="flex-1 bg-primary hover:bg-primary/90 text-secondary font-semibold h-12"
             onClick={() => onNavigate('esim')}

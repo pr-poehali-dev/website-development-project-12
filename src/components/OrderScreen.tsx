@@ -13,7 +13,7 @@ interface OrderScreenProps {
 
 export default function OrderScreen({ onNavigate, selectedData, selectedMinutes }: OrderScreenProps) {
   return (
-    <div className="min-h-screen bg-white p-6">
+    <div className="min-h-screen bg-white p-4 sm:p-6 pb-24">
       <div className="flex items-center justify-between mb-6">
         <Button 
           variant="ghost" 

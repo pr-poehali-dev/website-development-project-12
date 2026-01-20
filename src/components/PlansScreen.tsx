@@ -23,7 +23,7 @@ export default function PlansScreen({
   minutesOptions
 }: PlansScreenProps) {
   return (
-    <div className="min-h-screen bg-white p-6">
+    <div className="min-h-screen bg-white p-4 sm:p-6 pb-24">
       <div className="flex items-center justify-between mb-6">
         <Button 
           variant="ghost" 
@@ -38,16 +38,17 @@ export default function PlansScreen({
 
       <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
-          <h3 className="font-semibold text-secondary">гигабайты и минуты</h3>
-          <div className="flex items-center gap-2 text-sm text-slate-600">
-            <span>входит 40 стран</span>
+          <h3 className="text-sm sm:text-base font-semibold text-secondary">гигабайты и минуты</h3>
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+            <span className="hidden sm:inline">входит 40 стран</span>
+            <span className="sm:hidden">40 стран</span>
             <Icon name="ChevronRight" size={16} />
           </div>
         </div>
 
         <div className="space-y-4 mb-6">
           <div>
-            <div className="flex gap-2 mb-2">
+            <div className="flex gap-1.5 sm:gap-2 mb-2">
               <Button
                 variant="outline"
                 className="flex-shrink-0 bg-secondary text-white border-0"

@@ -7,7 +7,7 @@ interface EsimInfoScreenProps {
 
 export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
   return (
-    <div className="min-h-screen bg-white p-6 relative">
+    <div className="min-h-screen bg-white p-4 sm:p-6 relative pb-24">
       <div className="flex items-center justify-between mb-6">
         <Button 
           variant="ghost" 
@@ -23,7 +23,7 @@ export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
       </div>
 
       <div className="flex justify-center mb-6">
-        <div className="relative w-48 h-48">
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48">
           <img 
             src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/bucket/4933b267-f912-442c-9746-7bbc39b2527b.png" 
             alt="eSIM illustration" 
@@ -32,7 +32,7 @@ export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-center mb-2 text-secondary">
+      <h2 className="text-xl sm:text-2xl font-bold text-center mb-2 text-secondary">
         eSIM Travel от билайн
       </h2>
       <p className="text-center text-slate-600 mb-8">
@@ -62,8 +62,8 @@ export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
             desc: 'минуты и ГБ можно докупить по выгодной цене в приложении'
           }
         ].map((item, i) => (
-          <div key={i} className="flex gap-4 items-start">
-            <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <div key={i} className="flex gap-3 sm:gap-4 items-start">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-slate-100 flex items-center justify-center flex-shrink-0">
               <Icon name={item.icon} size={24} className="text-secondary" />
             </div>
             <div>
