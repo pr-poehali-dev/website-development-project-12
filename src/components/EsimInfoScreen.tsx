@@ -24,11 +24,10 @@ export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
 
       <div className="flex justify-center mb-6">
         <div className="relative w-48 h-48">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-500 rounded-full blur-2xl opacity-40"></div>
           <img 
-            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80" 
+            src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/bucket/4933b267-f912-442c-9746-7bbc39b2527b.png" 
             alt="eSIM illustration" 
-            className="relative w-full h-full object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
       </div>
