@@ -36,7 +36,7 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
         </div>
       </div>
 
-      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 pb-24">
         <h3 className="text-base sm:text-lg font-semibold text-secondary">
           eSIM Travel от билайн — один номер для всех путешествий
         </h3>
