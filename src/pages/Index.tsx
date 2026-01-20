@@ -37,7 +37,7 @@ export default function Index() {
 
             <div className="flex-1 relative overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80" 
+                src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/files/2bdba5df-bbb3-4a1c-9e92-f701a4c185be.jpg" 
                 alt="Happy travelers" 
                 className="w-full h-full object-cover"
               />
