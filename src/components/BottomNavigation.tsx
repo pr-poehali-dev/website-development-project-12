@@ -36,14 +36,6 @@ export default function BottomNavigation({ selectedScreen, onNavigate }: BottomN
         </Button>
         <Button
           variant="ghost"
-          className={`flex-col h-auto py-2 ${selectedScreen === 'order' ? 'text-primary' : 'text-slate-600'}`}
-          onClick={() => onNavigate('order')}
-        >
-          <Icon name="ShoppingCart" className="w-5 h-5 sm:w-6 sm:h-6" />
-          <span className="text-[10px] sm:text-xs mt-0.5 sm:mt-1">Оформить</span>
-        </Button>
-        <Button
-          variant="ghost"
           className={`flex-col h-auto py-2 ${selectedScreen === 'support' ? 'text-primary' : 'text-slate-600'}`}
           onClick={() => onNavigate('support')}
         >

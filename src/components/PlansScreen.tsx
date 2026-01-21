@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 interface PlansScreenProps {
   onNavigate: (screen: 'home' | 'esim' | 'plans' | 'order' | 'support') => void;
@@ -22,6 +31,53 @@ export default function PlansScreen({
   dataOptions,
   minutesOptions
 }: PlansScreenProps) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async () => {
+    if (!phone) {
+      toast({
+        title: 'Ошибка',
+        description: 'Введите номер телефона',
+        variant: 'destructive'
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('https://functions.poehali.dev/d4d2e659-3f2d-4289-a703-5b094c473d9a', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone,
+          data_gb: selectedData,
+          minutes: selectedMinutes
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Успешно!',
+          description: 'Ваша заявка принята. Мы свяжемся с вами в ближайшее время.'
+        });
+        setIsDialogOpen(false);
+        setPhone('');
+      } else {
+        throw new Error('Ошибка отправки');
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Попробуйте еще раз.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-white p-4 sm:p-6 pb-24">
       <div className="flex items-center justify-between mb-6">
@@ -146,10 +202,40 @@ export default function PlansScreen({
 
       <Button 
         className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 text-base"
-        onClick={() => onNavigate('order')}
+        onClick={() => setIsDialogOpen(true)}
       >
-        купить за 1 100 ₽/мес
+        оставить заявку
       </Button>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Оставить заявку</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="text-sm text-slate-600 mb-1">Выбранный тариф:</p>
+              <p className="font-semibold text-secondary">{selectedData} ГБ и {selectedMinutes} минут</p>
+            </div>
+            <div>
+              <Input
+                type="tel"
+                placeholder="+7 (999) 123-45-67"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="h-12"
+              />
+            </div>
+            <Button
+              className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-12"
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Отправка...' : 'Оставить заявку'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
