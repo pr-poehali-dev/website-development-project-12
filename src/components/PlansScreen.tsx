@@ -98,7 +98,6 @@ export default function PlansScreen({
           <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
             <span className="hidden sm:inline">входит 40 стран</span>
             <span className="sm:hidden">40 стран</span>
-            <Icon name="ChevronRight" size={16} />
           </div>
         </div>
 
