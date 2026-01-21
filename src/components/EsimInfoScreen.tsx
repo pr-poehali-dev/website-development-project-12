@@ -23,7 +23,7 @@ export default function EsimInfoScreen({ onNavigate }: EsimInfoScreenProps) {
       </div>
 
       <div className="flex justify-center mb-6">
-        <div className="relative w-40 h-40 sm:w-48 sm:h-48">
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48 bg-white rounded-2xl">
           <img 
             src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/bucket/4933b267-f912-442c-9746-7bbc39b2527b.png" 
             alt="eSIM illustration" 
