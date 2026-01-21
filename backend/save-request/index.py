@@ -37,10 +37,9 @@ def handler(event: dict, context) -> dict:
         cur = conn.cursor()
         
         schema = os.environ.get('MAIN_DB_SCHEMA', 'public')
-        cur.execute(
-            f'INSERT INTO {schema}.requests (phone, data_gb, minutes) VALUES (%s, %s, %s) RETURNING id',
-            (phone, data_gb, minutes)
-        )
+        phone_escaped = phone.replace("'", "''")
+        query = f"INSERT INTO {schema}.requests (phone, data_gb, minutes) VALUES ('{phone_escaped}', {data_gb}, {minutes}) RETURNING id"
+        cur.execute(query)
         request_id = cur.fetchone()[0]
         
         conn.commit()
