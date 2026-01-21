@@ -10,11 +10,11 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
     <div className="relative h-screen flex flex-col">
       <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 flex items-center justify-between z-10">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl flex items-center justify-center">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary rounded-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-primary/30 rounded-full blur-sm"></div>
-            </div>
-          </div>
+          <img 
+            src="https://cdn.poehali.dev/projects/5508466f-22e3-4b46-bcaf-19c52098afd0/bucket/4052e0ae-fc19-4113-98f3-d09dc5b762e6.jpg"
+            alt="Beeline logo"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl object-cover"
+          />
           <div>
             <h1 className="text-base sm:text-xl font-bold text-secondary">всегда на связи</h1>
             <p className="text-xs text-slate-600">от посадки до вылета</p>
