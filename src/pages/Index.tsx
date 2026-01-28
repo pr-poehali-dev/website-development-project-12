@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import InputMask from 'react-input-mask';
 import {
   Dialog,
   DialogContent,
@@ -16,6 +17,7 @@ export default function Index() {
   const [selectedData, setSelectedData] = useState(5);
   const [selectedMinutes, setSelectedMinutes] = useState(30);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -46,11 +48,8 @@ export default function Index() {
       });
 
       if (response.ok) {
-        toast({
-          title: 'Успешно!',
-          description: 'Ваша заявка принята. Мы свяжемся с вами в ближайшее время.'
-        });
         setIsDialogOpen(false);
+        setIsSuccessDialogOpen(true);
         setPhone('');
       } else {
         throw new Error('Ошибка отправки');
@@ -294,13 +293,21 @@ export default function Index() {
                 <p className="font-semibold text-secondary">{selectedData} ГБ и {selectedMinutes} минут</p>
               </div>
               <div>
-                <Input
-                  type="tel"
-                  placeholder="+7 (999) 123-45-67"
+                <InputMask
+                  mask="+7(999)9999999"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="h-12"
-                />
+                  maskChar="_"
+                >
+                  {(inputProps: any) => (
+                    <Input
+                      {...inputProps}
+                      type="tel"
+                      placeholder="+7(999)9999999"
+                      className="h-12"
+                    />
+                  )}
+                </InputMask>
               </div>
               <Button
                 className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-12"
@@ -308,6 +315,27 @@ export default function Index() {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Отправка...' : 'Оставить заявку'}
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
+          <DialogContent className="fixed inset-0 max-w-full h-screen flex items-center justify-center bg-gradient-to-br from-primary to-secondary border-0 rounded-none p-8">
+            <div className="text-center space-y-6">
+              <div className="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center">
+                <Icon name="Check" size={48} className="text-secondary" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-3">Заявка принята!</h2>
+                <p className="text-white/90 text-lg mb-2">Мы свяжемся с вами в ближайшее время</p>
+                <p className="text-white/80 text-sm">Тариф: {selectedData} ГБ и {selectedMinutes} минут</p>
+              </div>
+              <Button
+                className="bg-white text-secondary hover:bg-white/90 font-semibold h-12 px-8"
+                onClick={() => setIsSuccessDialogOpen(false)}
+              >
+                Отлично!
               </Button>
             </div>
           </DialogContent>
