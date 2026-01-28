@@ -232,7 +232,7 @@ export default function Index() {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-sm mb-1">установка eSIM за 3 минуты</h4>
-                  <p className="text-xs text-slate-600">без смены SIM и покупки travel-карт</p>
+                  <p className="text-xs text-slate-600">без смены SIM, легко и просто онлайн</p>
                 </div>
               </div>
             </Card>
