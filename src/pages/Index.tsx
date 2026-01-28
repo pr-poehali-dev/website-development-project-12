@@ -71,7 +71,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      <div className="w-full md:max-w-md mx-auto bg-white min-h-screen md:shadow-2xl">
+      <div className="w-full md:max-w-md mx-auto bg-white min-h-screen md:shadow-2xl pb-24">
         
         {/* Hero Section */}
         <div className="relative h-screen flex flex-col">
@@ -277,9 +277,12 @@ export default function Index() {
             </Card>
 
           </div>
+        </div>
 
+        {/* Fixed Button */}
+        <div className="fixed bottom-0 left-0 right-0 md:left-1/2 md:-translate-x-1/2 md:max-w-md bg-white border-t border-slate-200 p-4 shadow-lg">
           <Button 
-            className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 text-base mb-8"
+            className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 text-base"
             onClick={() => setIsDialogOpen(true)}
           >
             {calculatePrice()} ₽ — оставить заявку
