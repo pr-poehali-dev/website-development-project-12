@@ -252,25 +252,7 @@ export default function Index() {
               </Card>
             </div>
 
-            <Card className="p-4 mt-3 border-slate-200">
-              <div className="flex items-start gap-3 mb-3">
-                <Icon name="Plane" size={24} className="text-secondary flex-shrink-0" />
-                <div className="flex-1">
-                  <p className="text-sm font-medium mb-1">безлимит на билайн</p>
-                  <p className="text-xs text-slate-600">и 1 ГБ внутри РФ</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Icon name="AlertTriangle" size={20} className="text-red-500" />
-                  <div className="relative w-16 h-16">
-                    <Icon name="Shield" size={48} className="text-blue-400" />
-                  </div>
-                </div>
-                <Badge variant="destructive" className="text-xs">-30%</Badge>
-              </div>
-              <p className="text-sm mt-2">Страхование в поездке при оформлении eSIM</p>
-            </Card>
+
           </div>
 
           <Button 
