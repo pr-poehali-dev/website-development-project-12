@@ -252,6 +252,26 @@ export default function Index() {
               </Card>
             </div>
 
+            <Card className="p-4 mt-3 bg-gradient-to-br from-primary/10 to-secondary/5 border-primary/20">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Icon name="Gift" size={20} className="text-secondary" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-secondary mb-2 text-sm">В ПОДАРОК</h4>
+                  <div className="space-y-1.5">
+                    <div className="flex items-start gap-2">
+                      <Icon name="Phone" size={16} className="text-secondary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs text-slate-700">безлимитные звонки на билайн и 1 ГБ в России</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Shield" size={16} className="text-secondary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs text-slate-700">скидка 30% на страхование жизни в поездке</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
 
           </div>
 
