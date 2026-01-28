@@ -325,14 +325,14 @@ export default function Index() {
         </Dialog>
 
         <Dialog open={isSuccessDialogOpen} onOpenChange={setIsSuccessDialogOpen}>
-          <DialogContent className="fixed inset-0 max-w-full h-screen flex items-center justify-center bg-gradient-to-br from-primary to-secondary border-0 rounded-none p-8">
-            <div className="text-center space-y-6">
-              <div className="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center">
-                <Icon name="Check" size={48} className="text-secondary" />
+          <DialogContent className="sm:max-w-md bg-gradient-to-br from-primary to-secondary border-0">
+            <div className="text-center space-y-6 py-4">
+              <div className="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center">
+                <Icon name="Check" size={40} className="text-secondary" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white mb-3">Заявка принята!</h2>
-                <p className="text-white/90 text-lg mb-2">Мы свяжемся с вами в ближайшее время</p>
+                <h2 className="text-2xl font-bold text-white mb-3">Заявка принята!</h2>
+                <p className="text-white/90 mb-2">Мы свяжемся с вами в ближайшее время</p>
                 <p className="text-white/80 text-sm">Тариф: {selectedData} ГБ и {selectedMinutes} минут</p>
               </div>
               <Button
