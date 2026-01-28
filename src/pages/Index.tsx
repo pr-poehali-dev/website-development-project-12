@@ -282,7 +282,7 @@ export default function Index() {
             className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 text-base mb-8"
             onClick={() => setIsDialogOpen(true)}
           >
-            оставить заявку за {calculatePrice()} ₽
+            {calculatePrice()} ₽ — оставить заявку
           </Button>
         </div>
 
