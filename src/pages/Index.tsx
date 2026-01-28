@@ -25,6 +25,10 @@ export default function Index() {
   const dataOptions = [5, 15, 30, 50];
   const minutesOptions = [30, 50, 100, 150];
 
+  const calculatePrice = () => {
+    return selectedData === 5 && selectedMinutes === 30 ? 1000 : 2000;
+  };
+
   const handleSubmit = async () => {
     if (!phone) {
       toast({
@@ -164,7 +168,7 @@ export default function Index() {
 
         {/* Plans Section */}
         <div className="bg-white p-4 sm:p-6">
-          <h2 className="text-xl font-bold mb-6 text-center text-secondary">Тарифы</h2>
+          <h2 className="text-xl font-bold mb-6 text-center text-secondary">Тарифы на 7 дней</h2>
 
           <div className="mb-6">
             <div className="flex items-center justify-between mb-3">
@@ -278,7 +282,7 @@ export default function Index() {
             className="w-full bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 text-base mb-8"
             onClick={() => setIsDialogOpen(true)}
           >
-            оставить заявку
+            оставить заявку за {calculatePrice()} ₽
           </Button>
         </div>
 
